@@ -47,4 +47,9 @@ public class HeroController {
         return ResponseEntity.ok(heroService.addHero(hero));
     }
 
+    @GetMapping("name/{name}")
+    public ResponseEntity<Hero> getHeroByName(@PathVariable("name") String name) {
+        log.info("REST request buscar heroe por nomnbre");
+        return ResponseEntity.ok(heroService.getHeroByName(name));
+    }
 }
