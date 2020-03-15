@@ -40,4 +40,14 @@ public class HeroService {
     public Hero getHeroByName(String name){
         return heroRepository.findByName(name).get();
     }
+
+    public Hero updateHero(Hero hero){
+        Optional<Hero> optionalHero = heroRepository.findByName(hero.getName());
+        if(!optionalHero.isPresent()){
+            throw new BusinessException(messages.get("El heroe no existe"));
+        }//TODO:
+        return heroRepository.save(hero);
+    }
+
+
 }

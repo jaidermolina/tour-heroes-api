@@ -11,7 +11,6 @@ import javax.validation.constraints.NotNull;
 public class Hero {
 
     @Id
-
     @Column(name = "id")
     private Integer id;
 

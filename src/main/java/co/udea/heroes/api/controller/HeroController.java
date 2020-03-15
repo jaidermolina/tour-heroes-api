@@ -5,11 +5,13 @@ import co.udea.heroes.api.service.HeroService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.apache.coyote.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.ResponseErrorHandler;
 
 import java.util.List;
 
@@ -51,5 +53,10 @@ public class HeroController {
     public ResponseEntity<Hero> getHeroByName(@PathVariable("name") String name) {
         log.info("REST request buscar heroe por nomnbre");
         return ResponseEntity.ok(heroService.getHeroByName(name));
+    }
+
+    @PutMapping()
+    public ResponseEntity<Hero> updateHero(@RequestBody Hero hero) {
+        return ResponseEntity.ok(heroService.updateHero(hero));
     }
 }

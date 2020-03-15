@@ -17,10 +17,10 @@ spring:
 
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://xxx.xxx.xxx.xxx:5432/base_de_datos?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory&sslmode=require
+    url: jdbc:postgresql://ec2-34-200-116-132.compute-1.amazonaws.com:5432/daiv9ko3gpkgj7?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory&sslmode=require
     driver-class-name: org.postgresql.Driver
-    username:
-    password:
+    username: lhnpfhtmsnrkvj
+    password: 0d50ad4f93c1e48b5fb6a3405bd1af9494e251aa1bd47a33f4db6f0692e5d23f
     hikari:
       idle-timeout: 10000
       maximum-pool-size: 5
